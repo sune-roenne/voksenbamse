@@ -1,0 +1,10 @@
+﻿@page "/"
+
+<PageTitle>VoksenBamse.dk</PageTitle>
+
+<div class="quote-container">
+	@foreach(var (quote, indx) in Quotes.Select((quot, indx) => (quot, indx)))
+	{
+		<div class="quote" id="quote-@(indx)">@quote</div>
+	}
+</div>

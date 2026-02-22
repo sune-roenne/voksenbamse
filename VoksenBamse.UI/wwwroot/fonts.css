@@ -1,0 +1,11 @@
+﻿@font-face {
+    font-family: 'SG';
+    font-style: normal;
+    src: url('fonts/SourGum.ttf');
+}
+
+@font-face {
+    font-family: 'SG';
+    font-style: italic;
+    src: url('fonts/SourGum-Italic.ttf');
+}

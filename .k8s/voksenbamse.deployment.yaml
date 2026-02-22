@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: voksenbamse
+  labels:
+    app: voksenbamse
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: voksenbamse
+  template:
+    metadata:
+      labels:
+        app: voksenbamse
+    spec:
+      containers:
+      - name: voksenbamse
+        image: docker.io/library/voksenbamse:1.0.44
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
+          name: http-voksenbamse
+        env:
+           - name: HostingBasePath
+             valueFrom: 
+               configMapKeyRef:
+                 name: voksenbamse-config
+                 key: voksenbamse.BasePath

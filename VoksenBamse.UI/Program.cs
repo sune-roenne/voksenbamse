@@ -1,8 +1,12 @@
 
+using VoksenBamse.UI.Configuration;
 using VoksenBamse.UI.Pages;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var uiConf = new ConfigurationUI();
+builder.Configuration.GetSection(ConfigurationUI.ElementName)
+    .Bind(uiConf);
+builder.Services.Configure<ConfigurationUI>(builder.Configuration.GetSection(ConfigurationUI.ElementName));
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
@@ -25,5 +29,11 @@ app.UseAntiforgery();
 app.MapStaticAssets();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
+
+if (!string.IsNullOrEmpty(uiConf.BasePath))
+    app.MapBlazorHub("/" + uiConf.BasePath)
+    .WithOrder(-1);
+
+
 
 app.Run();

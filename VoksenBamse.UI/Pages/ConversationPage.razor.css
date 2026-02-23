@@ -1,0 +1,17 @@
+﻿.conversation-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.conversation-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.block-left {
+    align-items: start;
+}
+
+.block-right {
+    align-items: end;
+}

@@ -6,6 +6,8 @@ public record BamseConversationVmo(
     IReadOnlyCollection<BamseBlockVmo> Blocks
     )
 {
+    public BamseConversationInfoVmo ToInfo() => new BamseConversationInfoVmo(Id, Name);
+
 }
 
 public record BamseConversationInfoVmo(

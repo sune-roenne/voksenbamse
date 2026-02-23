@@ -1,8 +1,10 @@
 
+using VoksenBamse.UI;
 using VoksenBamse.UI.Configuration;
 using VoksenBamse.UI.Pages;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.AddBamseConfiguration();
 var uiConf = new ConfigurationUI();
 builder.Configuration.GetSection(ConfigurationUI.ElementName)
     .Bind(uiConf);
@@ -10,7 +12,7 @@ builder.Services.Configure<ConfigurationUI>(builder.Configuration.GetSection(Con
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
-
+builder.AddBamseServices();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

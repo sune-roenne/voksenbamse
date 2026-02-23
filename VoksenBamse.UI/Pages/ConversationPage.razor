@@ -1,0 +1,24 @@
+﻿@page "/conversation/{ConversationId}"
+@if(_conversation != null)
+{
+	<PageTitle>@_conversation.Name</PageTitle>
+}
+else
+{
+	<PageTitle>VoksenBamse.dk</PageTitle>
+}
+
+<div class="conversation-container">
+	@if(_conversation != null)
+	{
+		foreach(var bl in _conversation.Blocks)
+		{
+			<div class="conversation-block block-@(bl.IsRightSide ? "right" : "left")">
+				@foreach(var lin in bl.Lines)
+				{
+					<div class="conversation-line">@lin.Text</div>
+				}
+			</div>
+		}		
+	}
+</div>

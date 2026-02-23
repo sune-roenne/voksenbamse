@@ -5,4 +5,5 @@ public record BamseBlockVmo(
     IReadOnlyCollection<BamseLineVmo> Lines
     )
 {
+    public bool IsRightSide => By.IsRightSide;
 }

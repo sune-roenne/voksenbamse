@@ -1,17 +1,145 @@
-﻿.conversation-container {
+﻿.conversation-device {
+    position: relative;
+}
+.conversation-frame {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 10;
+    background-image: url('images/phone-screen.webp');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+    .conversation-frame::before {
+        content: '';
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        z-index: 9;
+        background-image: url('images/screen-glass.webp');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+.conversation-blocker {
+    content: '';
+    position: absolute;
+    z-index: 10;
+    backdrop-filter:blur(1000px) opacity(0.5); 
+}
+
+.blocker-top {
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.blocker-bottom {
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.conversation-container {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 11;
     display: flex;
     flex-direction: column;
+    padding: 2vw 8vh;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
+
+
+.conversation-row {
+    position: relative;
+    z-index: 7;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.row-left {
+    justify-content: start;
+}
+
+.row-right {
+    justify-content: end;
+}
+
 
 .conversation-block {
     display: flex;
     flex-direction: column;
+    border: 1px solid rgb(100,100,100);
+    border-radius: 10px;
+    padding: 10px;
 }
+
 
 .block-left {
     align-items: start;
+    background-color: rgb(128, 128, 128);
+    color: rgb(255,255,255);
+    font-weight: 700;
 }
 
 .block-right {
     align-items: end;
+    background-color: rgb(54, 121, 215);
+    color: rgb(240,240,240);
+    font-weight: 700;
 }
+
+@media (max-width: 700px) {
+    .conversation-device {
+        width: 100vw;
+        height: calc(100vw / 439 * 862);
+    }
+    .conversation-block {
+        width: 200px;
+    }
+    .conversation-container {
+        top: 8.4%;
+        bottom: 6%;
+    }
+    
+    .blocker-top {
+        height: 10%;
+    }
+    .blocker-bottom {
+        height: 10%;
+    }
+}
+
+@media (min-width: 700px) {
+    .conversation-device {
+        width: 800px;
+        height: calc(800px / 439 * 862);
+    }
+    .conversation-container {
+        top: 8.4%;
+        bottom: 6%;
+    }
+
+    .conversation-block {
+        max-width: 300px;
+    }
+    .blocker-top {
+        height: 2.4%;
+    }
+    .blocker-bottom {
+        height: 2%;
+    }
+
+}
+

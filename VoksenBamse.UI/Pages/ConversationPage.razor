@@ -1,4 +1,4 @@
-﻿@page "/conversation/{ConversationId}"
+﻿@page "/conversation/{conversationId:nonfile}"
 @if(_conversation != null)
 {
 	<PageTitle>@_conversation.Name</PageTitle>
@@ -7,18 +7,22 @@ else
 {
 	<PageTitle>VoksenBamse.dk</PageTitle>
 }
-
-<div class="conversation-container">
-	@if(_conversation != null)
-	{
-		foreach(var bl in _conversation.Blocks)
+<div class="conversation-device">
+	<div class="conversation-frame"></div>
+	<div class="conversation-container">
+		@if(_conversation != null)
 		{
-			<div class="conversation-block block-@(bl.IsRightSide ? "right" : "left")">
-				@foreach(var lin in bl.Lines)
-				{
-					<div class="conversation-line">@lin.Text</div>
-				}
-			</div>
-		}		
-	}
+			foreach(var bl in _conversation.Blocks)
+			{
+				<div class="conversation-row row-@(bl.IsRightSide ? "right" : "left")">
+					<div class="conversation-block block-@(bl.IsRightSide ? "right" : "left")">
+						@foreach (var lin in bl.Lines)
+						{
+							<p class="conversation-line">@lin.Text</p>
+						}
+					</div>
+				</div>
+			}		
+		}
+	</div>
 </div>

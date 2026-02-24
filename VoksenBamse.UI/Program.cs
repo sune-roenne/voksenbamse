@@ -10,8 +10,7 @@ builder.Configuration.GetSection(ConfigurationUI.ElementName)
     .Bind(uiConf);
 builder.Services.Configure<ConfigurationUI>(builder.Configuration.GetSection(ConfigurationUI.ElementName));
 // Add services to the container.
-builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents();
+builder.Services.AddRazorComponents();
 builder.AddBamseServices();
 var app = builder.Build();
 
@@ -29,8 +28,7 @@ app.UseHttpsRedirection();
 app.UseAntiforgery();
 
 app.MapStaticAssets();
-app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode();
+app.MapRazorComponents<App>();
 
 if (!string.IsNullOrEmpty(uiConf.BasePath))
     app.MapBlazorHub("/" + uiConf.BasePath)

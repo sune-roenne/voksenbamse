@@ -1,0 +1,27 @@
+﻿#neon-lights-bamse {
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1700;
+    stroke-dashoffset: 1700;
+    animation-name: drawing;
+    animation-duration: 10s;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+}
+
+
+@keyframes drawing {
+    0% {
+        stroke: rgb(189,160,202);
+        filter: brightness(1.8);
+        stroke-dashoffset: 1700;
+    }
+    100% {
+        stroke: rgb(225,247,253);
+        filter: brightness(1.8);
+        stroke-dashoffset: 0;
+    }
+}

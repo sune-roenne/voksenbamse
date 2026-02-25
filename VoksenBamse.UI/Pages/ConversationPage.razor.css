@@ -1,6 +1,17 @@
 ﻿.conversation-device {
     position: relative;
 }
+.conversation-background {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 1vw;
+    width: calc(100% - 1vw);
+    height: 100%;
+    z-index: 9;
+    background-color: rgba(15,15,15,0.9);
+    border-radius: 10vh;
+}
 .conversation-frame {
     position: absolute;
     top: 0px;

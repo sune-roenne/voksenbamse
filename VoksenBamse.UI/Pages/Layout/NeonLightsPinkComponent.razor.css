@@ -1,0 +1,27 @@
+﻿#neon-path-pink {
+    animation-name: blinking;
+    animation-duration: 10s;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+}
+
+
+@keyframes blinking {
+    0% {
+        stroke: rgb(169,1,153);
+        filter: brightness(0.8);
+        fill: rgb(169,1,153);
+        box-shadow: 0px 0px 100px 10px rgb(169,1,153);
+        opacity: 0.2;
+    }
+
+    100% {
+        stroke: rgb(189,160,202);
+        filter: brightness(1.8);
+        fill: rgb(189,160,202);
+        box-shadow: 6px 6px 100px 10px rgb(189,160,202);
+        opacity: 1;
+    }
+}

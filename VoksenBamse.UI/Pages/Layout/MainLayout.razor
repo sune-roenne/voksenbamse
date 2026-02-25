@@ -1,6 +1,14 @@
 ﻿@inherits LayoutComponentBase
 
 <div class="page">
+    <div class="background">
+        <div id="neon-lights-blue-container" class="neon-lights-container">
+            <NeonLightsBlueComponent PixelSize="1600"></NeonLightsBlueComponent>
+        </div>
+        <div id="neon-lights-pink-container" class="neon-lights-container">
+            <NeonLightsPinkComponent PixelSize="1600"></NeonLightsPinkComponent>
+        </div>
+    </div>
     <main>
         <article class="content px-4">
             @Body

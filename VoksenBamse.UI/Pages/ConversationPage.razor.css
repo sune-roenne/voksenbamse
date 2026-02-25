@@ -56,6 +56,10 @@
     padding: 2vw 8vh;
     overflow-y: auto;
     overflow-x: hidden;
+    scrollbar-gutter: unset;
+    scrollbar-width: thin;
+    scrollbar-arrow-color: rgb(189,160,202);
+    scrollbar-color: rgba(225,247, 253, 0.7) rgba(0,0,0, 0.5);
 }
 
 

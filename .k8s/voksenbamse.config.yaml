@@ -1,6 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: voksenbamse-config
+  name: voba-config
 data:
-  UI.BasePath: voksenbamse
+  UI.BasePath: voba
+  allow-snippet-annotations: "true"

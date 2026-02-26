@@ -128,14 +128,14 @@
     align-items: start;
     background-color: rgb(128, 128, 128);
     color: rgb(255,255,255);
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .block-right {
-    align-items: end;
+    align-items: start;
     background-color: rgb(54, 121, 215);
     color: rgb(240,240,240);
-    font-weight: 700;
+    font-weight: 600;
 }
 
 @media (max-width: 700px) {

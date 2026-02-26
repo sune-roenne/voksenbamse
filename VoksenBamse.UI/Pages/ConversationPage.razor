@@ -8,6 +8,12 @@ else
 	<PageTitle>VoksenBamse.dk</PageTitle>
 }
 <div class="conversation-device">
+	<div class="conversation-title">
+		@if(_conversation != null)
+		{
+			<div class="conversation-title-text">@_conversation.Name</div>
+		}
+	</div>
 	<div class="conversation-background"></div>
 	<div class="conversation-frame"></div>
 	<div class="conversation-container">

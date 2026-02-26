@@ -9,3 +9,7 @@
     font-style: italic;
     src: url('fonts/SourGum-Italic.ttf');
 }
+@font-face {
+    font-family: 'Ink';
+    src: url('fonts/Inkfree.ttf');
+}

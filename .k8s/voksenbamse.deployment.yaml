@@ -1,29 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: voksenbamse
+  name: voba
   labels:
-    app: voksenbamse
+    app: voba
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: voksenbamse
+      app: voba
   template:
     metadata:
       labels:
-        app: voksenbamse
+        app: voba
     spec:
       containers:
-      - name: voksenbamse
-        image: docker.io/library/voksenbamse:1.0.44
+      - name: voba
+        image: docker.io/library/vb:1.0.2
         imagePullPolicy: Never
         ports:
         - containerPort: 8080
-          name: http-voksenbamse
+          name: http-voba
         env:
            - name: HostingBasePath
              valueFrom: 
                configMapKeyRef:
-                 name: voksenbamse-config
-                 key: voksenbamse.BasePath
+                 name: voba-config
+                 key: UI.BasePath
